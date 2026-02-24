@@ -50,6 +50,17 @@ Frontend em `http://localhost:5173`.
 docker compose up --build
 ```
 
+## Integração Amadeus (opcional)
+
+Para usar busca real de ofertas via Amadeus Self-Service API, configure:
+
+```bash
+export AMADEUS_API_KEY="seu_api_key"
+export AMADEUS_API_SECRET="seu_api_secret"
+```
+
+Sem essas variáveis o provider da Amadeus é ignorado e o sistema segue com provider mock local.
+
 ## Endpoints principais
 
 - `GET /health`
