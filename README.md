@@ -61,6 +61,22 @@ export AMADEUS_API_SECRET="seu_api_secret"
 
 Sem essas variáveis o provider da Amadeus é ignorado e o sistema segue com provider mock local.
 
+
+## Scraping multi-site (opcional)
+
+Foi adicionado um provider de scraping com cobertura de metabuscadores e cias aéreas (Google Flights, Kayak, Skyscanner, Decolar, ViajaNet, 123Milhas, LATAM, GOL e Azul).
+
+Por padrão ele fica **desligado** para evitar bloqueios/rate-limit em ambientes de teste. Para ativar:
+
+```bash
+export ENABLE_WEB_SCRAPING=true
+# opcionais
+export WEB_SCRAPING_TIMEOUT_SECONDS=3
+export WEB_SCRAPING_MAX_SOURCES=9
+```
+
+> Observação: alguns sites têm rendering por JavaScript e anti-bot, então a captura é best-effort e pode retornar zero resultados em alguns cenários.
+
 ## Endpoints principais
 
 - `GET /health`

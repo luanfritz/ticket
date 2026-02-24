@@ -10,6 +10,7 @@ from app.models import (
 )
 from app.providers.amadeus_provider import AmadeusFlightProvider
 from app.providers.mock_provider import MockFlightProvider
+from app.providers.web_scraping_provider import WebScrapingFlightProvider
 from app.services.miles import is_miles_good_deal
 from app.services.promotions import match_promotions
 from app.services.scoring import score_option, total_minutes, value_per_mile
@@ -17,7 +18,7 @@ from app.services.scoring import score_option, total_minutes, value_per_mile
 
 class FlightEngine:
     def __init__(self) -> None:
-        self.providers = [AmadeusFlightProvider(), MockFlightProvider()]
+        self.providers = [AmadeusFlightProvider(), WebScrapingFlightProvider(), MockFlightProvider()]
         self.min_connection_minutes = 90
         self.max_connection_minutes = 360
 
