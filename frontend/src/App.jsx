@@ -17,14 +17,24 @@ export function App() {
 
   return (
     <main className="container">
-      <h1>Smart Fare Engine</h1>
-      <p>Painel de busca, decisão e promoções.</p>
+      <header className="hero card">
+        <p className="eyebrow">SMART FARE ENGINE</p>
+        <h1>Painel robusto para encontrar a melhor oferta</h1>
+        <p>
+          Compare preço em dinheiro, milhas e estratégias de split ticket com acesso rápido ao link de
+          direcionamento para cada oferta.
+        </p>
+      </header>
+
       <SearchForm onSearch={onSearch} />
       <ResultsPanel result={result} />
       <PromotionManager apiBase={API_BASE} />
-      <section className="card">
+
+      <section className="card muted-card">
         <h2>Alert Checker</h2>
-        <p>Use o endpoint <code>/api/v1/alerts/check</code> para validar alertas por preço atual.</p>
+        <p>
+          Use o endpoint <code>/api/v1/alerts/check</code> para validar alertas por preço atual.
+        </p>
       </section>
     </main>
   )
